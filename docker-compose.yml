@@ -1,5 +1,6 @@
 ﻿services:
   sprphone:
+    container_name: sprphone
     image: sprphone
     build:
       context: .
