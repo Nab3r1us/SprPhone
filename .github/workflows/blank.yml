@@ -35,4 +35,4 @@ jobs:
           if ! docker network inspect sprphone >/dev/null 2>&1; then
             docker network create sprphone
           fi
-          docker-compose down && docker-compose up -d --build
+          docker compose down && docker compose up -d --build
