@@ -7,8 +7,6 @@
       dockerfile: Dockerfile
     environment:
       - ASPNETCORE_URLS=http://+:80
-    depends_on:
-      - postgres
     ports:
       - 8080:80
     networks:
