@@ -16,7 +16,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build:
+  build-deploy:
     # The type of runner that the job will run on
     runs-on: self-hosted
 
@@ -35,4 +35,4 @@ jobs:
           if ! docker network inspect sprphone >/dev/null 2>&1; then
             docker network create sprphone
           fi
-          docker compose down && docker compose up -d --build
+          docker compose down && docker compose up -d --build && docker compose -f docker-compose-db.yml up -d

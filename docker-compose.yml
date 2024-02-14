@@ -1,14 +1,19 @@
 ﻿services:
   sprphone:
     container_name: sprphone
-    image: sprphone
+    image: hellcorp.local/sprphone:latest
     build:
       context: .
       dockerfile: Dockerfile
+    environment:
+      - ASPNETCORE_URLS=http://+:80
+    depends_on:
+      - postgres
     ports:
-      - 8080:8080
+      - 8080:80
     networks:
       - sprphone
+
 networks:
   sprphone:
     external: true
